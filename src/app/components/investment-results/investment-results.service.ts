@@ -9,17 +9,13 @@ export class InvestmentResultsService {
 
   investmentResultsOutput: InvestmentResultsOutput[] = [];
 
-  submitInvestmentResultsInput(investmentResultsInput: InvestmentResultsInput) {
-    this.investmentResultsOutput = this.calculateInvestmentResults(investmentResultsInput);
-  }
-
   /**
    * This method calculates the investment results based on the provided input parameters.
    * @param investmentResultsInput - The input parameters for the investment calculation.
    * @returns An array of objects containing the annual investment results.
    */
 
-  private calculateInvestmentResults(investmentResultsInput: InvestmentResultsInput) {
+  calculateInvestmentResults(investmentResultsInput: InvestmentResultsInput) {
     const annualData = [];
     let investmentValue = investmentResultsInput.initialInvestment;
 
@@ -39,7 +35,7 @@ export class InvestmentResultsService {
       });
     }
 
-    return annualData;
+    this.investmentResultsOutput = annualData;
   }
 
   getInvestmentResultsOutput() {
