@@ -1,7 +1,8 @@
-export interface InvestmentResultsInput {
-    year: number;
-    investmentValue: number;
-    interest: number;
-    totalInterest: number;
-    investedCapital: number;
+export interface InvestmentResultsOutput {
+    year: number,
+    interest: number,
+    valueEndOfYear: number,
+    annualInvestment: number,
+    totalInterest: number,
+    totalAmountInvested: number,
 }

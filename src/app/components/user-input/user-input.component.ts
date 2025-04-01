@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { InvestmentResultsService } from '../investment-results/investment-results.service';
 
 @Component({
   selector: 'app-user-input',
@@ -14,11 +15,16 @@ export class UserInputComponent {
   expectedReturn: number = 0;
   duration: number = 0;
 
-  
+
+  constructor(private investmentResultsService: InvestmentResultsService) { }
+
   onSubmit() {
-    throw new Error('Method not implemented.');
+    this.investmentResultsService.submitInvestmentResultsInput({
+      initialInvestment: this.initalInvestment,
+      annualInvestment: this.annualInvestment,
+      expectedReturn: this.expectedReturn,
+      duration: this.duration
+    });
   }
-
-
 
 }
