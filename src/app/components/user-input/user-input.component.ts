@@ -12,9 +12,8 @@ import { InvestmentResultsService } from '../investment-results/investment-resul
 export class UserInputComponent {
   initalInvestment: number = 0;
   annualInvestment: number = 0;
-  expectedReturn: number = 0;
-  duration: number = 0;
-
+  expectedReturn: number = 5; // Default value of 5%
+  duration: number = 10; // Default value of 10 years
 
   constructor(private investmentResultsService: InvestmentResultsService) { }
 
